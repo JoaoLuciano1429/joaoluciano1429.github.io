@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Gradiente iridescente principal -->
+    <radialGradient id="bubbleGradient" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#bdfcff" stop-opacity="0.85"/>
+      <stop offset="45%" stop-color="#7df9ff" stop-opacity="0.75"/>
+      <stop offset="65%" stop-color="#38f9d7" stop-opacity="0.65"/>
+      <stop offset="80%" stop-color="#7a7dff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ff7adf" stop-opacity="0.55"/>
+    </radialGradient>
+
+    <!-- Borda iridescente -->
+    <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#7df9ff"/>
+      <stop offset="50%" stop-color="#38f9d7"/>
+      <stop offset="75%" stop-color="#7a7dff"/>
+      <stop offset="100%" stop-color="#ff7adf"/>
+    </linearGradient>
+
+    <!-- Glow externo -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="25" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reflexo superior -->
+    <radialGradient id="highlight" cx="30%" cy="25%" r="40%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+  </defs>
+
+  <!-- Bolha principal -->
+  <circle cx="500" cy="500" r="380"
+          fill="url(#bubbleGradient)"
+          stroke="url(#strokeGradient)"
+          stroke-width="12"
+          filter="url(#glow)" />
+
+  <!-- Reflexo interno -->
+  <ellipse cx="400" cy="350" rx="180" ry="120"
+           fill="url(#highlight)" />
+
+  <!-- Pequenos brilhos -->
+  <circle cx="650" cy="300" r="25" fill="#ffffff" opacity="0.8"/>
+  <circle cx="700" cy="350" r="12" fill="#ffffff" opacity="0.7"/>
+  <circle cx="300" cy="700" r="15" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Texto Blog -->
+  <text x="500" y="420"
+        text-anchor="middle"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="90"
+        font-weight="600"
+        fill="#003d00"
+        letter-spacing="6">
+    Blog
+  </text>
+
+  <!-- Texto JL -->
+  <text x="500" y="600"
+        text-anchor="middle"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="260"
+        font-weight="800"
+        fill="#003d00"
+        letter-spacing="12">
+    JL
+  </text>
+
+</svg>
